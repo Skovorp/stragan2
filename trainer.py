@@ -196,7 +196,7 @@ def calc_lpips(cfg):
             x_real = denorm(x_real.cpu()) * 2 - 1
             x_fake = denorm(x_fake.cpu()) * 2 - 1
 
-            values.append(lpips(x_fake, x_real.cpu() * 2 - 1).squeeze().item())
+            values.append(lpips(x_fake, x_real).squeeze().item())
     res = np.mean(values) / cfg['batch_size']
     print("lpips:", res)
     wandb.log({"lpips": res})
