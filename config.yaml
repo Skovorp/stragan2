@@ -1,0 +1,13 @@
+img_size: 256
+batch_size: 4
+num_domains: 2
+style_dim: 64
+latent_dim: 16
+total_iters: 10000
+optimizer:
+  lr: 1.0e-4
+  betas: [0.0, 0.99]
+  weight_decay: 1.0e-4
+lr_mapping: 1.0e-6
+generator_label_smoothing: 1
+discriminator_label_smoothing: 1
